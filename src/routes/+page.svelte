@@ -5,7 +5,11 @@ I cant get this QR CODE to work
     import QRCodeStyling from "qr-code-styling";
 
     import { onMount } from 'svelte';
+    
     onMount(async () => {
+
+        let id = document.getElementById("canvas");
+        
         const qrCode = new QRCodeStyling({
             width: 300,
             height: 300,
@@ -20,7 +24,7 @@ I cant get this QR CODE to work
                 margin: 20
             }
         });
-        qrCode.append(document.getElementById("canvas"));
+        qrCode.append(id);
         qrCode.download({ name: "qr", extension: "svg" });
     });
 </script>
